@@ -32,6 +32,9 @@ disqus-identifier: bomber-turtle # Add your shortname for Disqus Comment. For ex
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-paginate

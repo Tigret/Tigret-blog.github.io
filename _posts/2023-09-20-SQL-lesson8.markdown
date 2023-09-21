@@ -1,0 +1,43 @@
+---
+layout: post
+title: 8강. And / Or / Not &#58 원하는 행 선택하기
+image: 8.jpg
+date: 2023-09-20 17:26:20 +0900
+tags: [SQL, BearU]
+categories: SQL
+---
+### 논리연산자
+```sql
+SELECT *
+FROM employees
+WHERE salary >=10000 
+--AND (department_id = '90' OR department_id = '110' 
+--OR department_id = '100' OR department_id = '120');
+--AND (department_id IN ('90', '100', '110', '120'));
+AND (department_id NOT IN ('90', '100', '110', '120'));
+
+SELECT *
+FROM employees
+WHERE salary between 10000 AND 20000;
+
+SELECT *
+FROM employees
+WHERE salary > 10000 AND salary < 20000;
+
+SELECT *
+FROM employees
+WHERE salary < 10000 OR salary >= 20000;
+
+SELECT *
+FROM employees
+WHERE (salary > 10000 AND salary < 20000)
+    AND DEPARTMENT_ID IN('30','100');
+    
+--SELECT *
+--FROM employees
+--WHERE commission_pct is null;
+
+SELECT *
+FROM employees
+WHERE commission_pct is not null;
+```
